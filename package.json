@@ -1,0 +1,28 @@
+{
+  "name": "insta-download",
+  "version": "1.0.0",
+  "description": "CLI tool to download Instagram videos",
+  "main": "insta-download.js",
+  "bin": {
+    "insta-download": "./insta-download.js"
+  },
+  "scripts": {
+    "start": "node insta-download.js"
+  },
+  "keywords": [
+    "instagram",
+    "downloader",
+    "cli",
+    "video"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
