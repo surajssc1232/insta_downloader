@@ -38,7 +38,7 @@ A simple command-line tool to download Instagram videos directly to your compute
    ```bash
    export INSTA_RAPIDAPI_KEY="your-api-key-here"
    ```
-   Replace `your-api-key-here` with your RapidAPI key from [Instagram Looter 2](https://rapidapi.com/logicbuilder/api/instagram-looter2/)
+   Replace `your-api-key-here` with your RapidAPI key from [Instagram Looter 2](https://rapidapi.com/iq.faceok/api/instagram-looter2)
    
    Then reload your shell configuration:
    ```bash
