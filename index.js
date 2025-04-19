@@ -4,12 +4,13 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-require('dotenv').config();
 
 // Check for required environment variables
-if (!process.env.RAPIDAPI_KEY) {
-  console.error('❌ Missing RAPIDAPI_KEY in .env file');
-  console.error('Please create a .env file with your RapidAPI key');
+if (!process.env.INSTA_RAPIDAPI_KEY) {
+  console.error('❌ Missing INSTA_RAPIDAPI_KEY in environment');
+  console.error('Please add the following to your ~/.zshrc file:');
+  console.error('export INSTA_RAPIDAPI_KEY="your-api-key-here"');
+  console.error('Then restart your terminal or run: source ~/.zshrc');
   process.exit(1);
 }
 
@@ -23,12 +24,12 @@ if (!fs.existsSync(downloadsDir)) {
 async function getInstagramVideoUrl(postUrl) {
   try {
     const response = await axios.get(
-      `https://${process.env.RAPIDAPI_HOST || 'instagram-looter2.p.rapidapi.com'}/post-dl`,
+      `https://${process.env.INSTA_RAPIDAPI_HOST || 'instagram-looter2.p.rapidapi.com'}/post-dl`,
       {
         params: { url: postUrl },
         headers: {
-          'x-rapidapi-host': process.env.RAPIDAPI_HOST || 'instagram-looter2.p.rapidapi.com',
-          'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+          'x-rapidapi-host': process.env.INSTA_RAPIDAPI_HOST || 'instagram-looter2.p.rapidapi.com',
+          'x-rapidapi-key': process.env.INSTA_RAPIDAPI_KEY,
         },
       }
     );

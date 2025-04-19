@@ -11,7 +11,7 @@ A simple command-line tool to download Instagram videos directly to your compute
 - 🔄 Simple progress bar with percentage
 - 📂 Automatically saves to organized directory
 - 🛠️ Custom filename option
-- 🔒 Secure API key handling via environment variables
+- 🔒 System-wide API key configuration
 
 ## Installation
 
@@ -33,11 +33,17 @@ A simple command-line tool to download Instagram videos directly to your compute
    npm install
    ```
 
-3. Set up environment variables
+3. Configure your API key
+   Add the following line to your `~/.zshrc` file:
    ```bash
-   cp .env.example .env
+   export INSTA_RAPIDAPI_KEY="your-api-key-here"
    ```
-   Then edit the `.env` file and add your RapidAPI key from [Instagram Looter 2](https://rapidapi.com/logicbuilder/api/instagram-looter2/)
+   Replace `your-api-key-here` with your RapidAPI key from [Instagram Looter 2](https://rapidapi.com/logicbuilder/api/instagram-looter2/)
+   
+   Then reload your shell configuration:
+   ```bash
+   source ~/.zshrc
+   ```
 
 4. Make the script executable
    ```bash
@@ -56,7 +62,6 @@ A simple command-line tool to download Instagram videos directly to your compute
 This tool requires the following Node.js packages:
 - `commander` - For command-line interface and options parsing
 - `axios` - For HTTP requests
-- `dotenv` - For environment variable management
 
 ## Usage
 
@@ -94,11 +99,15 @@ This tool uses the Instagram Looter 2 API via RapidAPI to fetch video informatio
 
 ### API Key Security
 
-The tool stores your API key securely in a `.env` file which is ignored by git to prevent accidental exposure. Make sure to:
+The tool uses your system's shell configuration (`~/.zshrc`) to securely store your API key. This provides:
 
-1. Never commit your `.env` file to version control
-2. Keep your API key private
-3. Regenerate your API key if you suspect it has been compromised
+1. System-wide access to the API key
+2. No need for local configuration files
+3. Standard Unix environment variable security
+
+Remember to:
+- Keep your API key private
+- Regenerate your API key if you suspect it has been compromised
 
 ## Limitations
 
