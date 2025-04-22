@@ -4,7 +4,7 @@
   "description": "CLI tool to download Instagram videos",
   "main": "insta-download.js",
   "bin": {
-    "insta-download": "./insta-download.js"
+    "insta-download": "./index.js"
   },
   "scripts": {
     "start": "node insta-download.js"
